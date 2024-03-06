@@ -15,9 +15,9 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {isSignedIn ? <SignOutButton /> : <SignInButton />}
+      
       <div className="flex justify-center items-center w-full h-screen font-chakra flex-col gap-8">
-        <h1 className="text-4xl text-white">
+        <h1 className="text-4xl">
           Welcome frontforumfocus the platform for the SDGs
         </h1>
         <div className="bg-white rounded-xl w-full h-full flex flex-col justify-center items-center gap-8"></div>
@@ -27,13 +27,16 @@ export default function Home() {
             e.preventDefault();
             handleUserAction({ message });
           }}>
-          <input className="p-2 rounded-md w-full text-black"
+          <input className="p-2 rounded-md w-full text-white"
             name="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
-          <button>submit</button>
+          <button>Align my Focus</button>
         </form>
+        <div>
+          Featured SDGS
+        </div>
       </div>
     </main>
   );

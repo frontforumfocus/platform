@@ -4,6 +4,7 @@ import { ClerkProvider, useAuth } from "@clerk/nextjs";
 import { ConvexReactClient } from "convex/react";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
 import { PropsWithChildren } from "react";
+import { ThemeProvider } from "@/app/theme-provider"
 
 
 const convex = new ConvexReactClient(
@@ -18,7 +19,13 @@ export function Providers({ children }: PropsWithChildren) {
     <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>  
   
         <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
+              <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange>
             {children}
+            </ThemeProvider>
         </ConvexProviderWithClerk>
         </ClerkProvider>
     

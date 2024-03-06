@@ -14,7 +14,7 @@ export const handleUserAction = action({
     
     const chatCompletion = await openai.chat.completions.create({
       messages: [{ role: 'user', content: args.message}],
-      model: 'gpt-4',
+      model: 'gpt-3.5-turbo',
     });
 
     console.log(chatCompletion);
