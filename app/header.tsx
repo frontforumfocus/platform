@@ -3,6 +3,7 @@
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { ModeToggle } from "./mode-toggle";
 import { FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa'; 
+import Link from "next/link";
 
 export function Header() {
     return (
@@ -11,7 +12,10 @@ export function Header() {
                 {/* Navigation Links on the Left */}
                 <div className="flex items-center gap-4">
                     <div>frontforumfocus</div>
-                    <div>Network</div>
+                    <div>
+                         <a href="/impact">Impact Measurement</a>
+            
+                    </div>
                     <div>Projects</div>
                 </div>
 
