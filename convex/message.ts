@@ -1,7 +1,6 @@
 import { v } from "convex/values";
 import { action, mutation, query } from "./_generated/server";
 import OpenAI from "openai";
-import { Completions } from "openai/resources";
 import { api } from "./_generated/api";
 
 const openai = new OpenAI();

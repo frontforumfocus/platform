@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Activity } from '@/convex/prompts';
 // Define the activities and their impacts
 const activities = [
   { name: '10 min shower', impacts: ['SDG 6'] },

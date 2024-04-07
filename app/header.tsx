@@ -13,7 +13,7 @@ export function Header() {
                 <div className="flex items-center gap-4">
                     <div>frontforumfocus</div>
                     <div>
-                         <a href="/impact">Impact Measurement</a>
+                         <Link href="/impact">Impact Measurement</Link>
             
                     </div>
                     <div>Projects</div>
