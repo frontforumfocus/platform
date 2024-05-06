@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Activity } from '@/convex/prompts';
-// Define the activities and their impacts
+import Chart from 'chart.js/auto';
+import type { ChartConfiguration } from 'chart.js';
+
 const activities = [
   { name: '10 min shower', impacts: ['SDG 6'] },
   { name: '1 hour walk', impacts: ['SDG 3', 'SDG 11'] },
@@ -12,11 +14,35 @@ const activities = [
   // Add more activities as needed
 ];
 
+
 const Impact: React.FC = () => {
+  const [goal, setGoal] =useState(0)
+  const [newActivityName, setNewActivityName] = useState('');
+  const [newActivityImpacts, setNewActivityImpacts] = useState<string[]>([]);
   const [checkedActivities, setCheckedActivities] = useState<string[]>([]);
+  const [goalProgress, setGoalProgress] = useState<{ [name: string]: number }>({});
+  const [selectedActivity, setSelectedActivity] = useState<string | null>(null);
 
   const handleActivityChange = (activityName: string) => {
     setCheckedActivities(prev => prev.includes(activityName) ? prev.filter(name => name !== activityName) : [...prev, activityName]);
+  };
+  
+
+  const handleAddActivity = () => {
+    setActivities(prev => [...prev, { name: newActivityName, impacts: newActivityImpacts }]);
+    setNewActivityName('');
+    setNewActivityImpacts([]);
+  };
+
+  const handleGoalChange = (goalName: string, progress: number) => {
+    setGoalProgress(prev => ({ ...prev, [goalName]: progress }));
+  };
+
+  const handleActivityClick = (activityName: string) => {
+    const activity = activities.find(activity => activity.name === activityName);
+    if (activity) {
+      setSelectedActivity(activity.impacts.join(', '));
+    }
   };
 
   const totalImpacts = checkedActivities.flatMap(activityName => {
@@ -35,6 +61,7 @@ const Impact: React.FC = () => {
                 type="checkbox"
                 checked={checkedActivities.includes(activity.name)}
                 onChange={() => handleActivityChange(activity.name)}
+                onClick={() => handleActivityClick(activity.name)}
               />
               {activity.name}
             </label>
@@ -42,6 +69,23 @@ const Impact: React.FC = () => {
         ))}
       </form>
       <h2>Total Impacts: {totalImpacts.join(', ')}</h2>
+      <h2>Selected Activity: {selectedActivity}</h2>
+      <form onSubmit={handleAddActivity}>
+        <input
+          type="text"
+          value={newActivityName}
+          onChange={e => setNewActivityName(e.target.value)}
+        />
+        <input
+          type="text"
+          value={newActivityImpacts.join(', ')}
+          onChange={e => setNewActivityImpacts(e.target.value.split(', '))}
+        />
+        <button type="submit">Add Activity</button>
+      </form>
+      {activities.map(activity => (
+       <div>Goal: {goal}</div>
+      ))}
     </div>
   );
 };
