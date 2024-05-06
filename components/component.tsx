@@ -230,7 +230,7 @@ strokeLinejoin="round"
 }
 
 
-function ClockIcon(props) {
+function ClockIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -276,7 +276,7 @@ strokeLinejoin="round"
 }
 
 
-function FlowerIcon(props) {
+function FlowerIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -301,7 +301,7 @@ function FlowerIcon(props) {
 }
 
 
-function FuelIcon(props) {
+function FuelIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -324,7 +324,7 @@ function FuelIcon(props) {
 }
 
 
-function HeartHandshakeIcon(props) {
+function HeartHandshakeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -347,7 +347,7 @@ function HeartHandshakeIcon(props) {
 }
 
 
-function RecycleIcon(props) {
+function RecycleIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -372,7 +372,7 @@ function RecycleIcon(props) {
 }
 
 
-function SunsetIcon(props) {
+function SunsetIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -399,7 +399,7 @@ function SunsetIcon(props) {
 }
 
 
-function TreesIcon(props) {
+function TreesIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
