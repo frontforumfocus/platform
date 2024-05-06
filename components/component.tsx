@@ -3,6 +3,7 @@
 * @see https://v0.dev/t/tcdgTZ4d7ZI
 * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
 */
+import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card"
@@ -46,35 +47,35 @@ export function Component() {
           <h3 className="text-2xl font-semibold py-4">Alignments</h3>
           <div className="grid grid-cols-4 gap-4 pb-6">
             <Button className="px-6 py-3" variant="destructive">
-              <SunsetIcon className="w-8 h-8" />
+              <SunsetIcon />
               <span>Sunset Views</span>
             </Button>
             <Button className="px-6 py-3" variant="destructive">
-              <TreesIcon className="w-8 h-8" />
+              <TreesIcon />
               <span>Green Spaces</span>
             </Button>
             <Button className="px-6 py-3" variant="destructive">
-              <FuelIcon className="w-8 h-8" />
+              <FuelIcon />
               <span>Renewable Energy</span>
             </Button>
             <Button className="px-6 py-3" variant="destructive">
-              <ClockIcon className="w-8 h-8" />
+              <ClockIcon />
               <span>Earth Hour</span>
             </Button>
             <Button className="px-6 py-3" variant="destructive">
-              <RecycleIcon className="w-8 h-8" />
+              <RecycleIcon />
               <span>Zero Waste Lifestyle</span>
             </Button>
             <Button className="px-6 py-3" variant="destructive">
-              <FlowerIcon className="w-8 h-8" />
+              <FlowerIcon />
               <span>Plant-based Diet</span>
             </Button>
             <Button className="px-6 py-3" variant="destructive">
-              <FishIcon className="w-8 h-8" />
+              <FishIcon />
               <span>Clean Oceans</span>
             </Button>
             <Button className="px-6 py-3" variant="destructive">
-              <HeartHandshakeIcon className="w-8 h-8" />
+              <HeartHandshakeIcon />
               <span>Eco-friendly Practices</span>
             </Button>
           </div>
@@ -84,7 +85,7 @@ export function Component() {
           <div className="grid grid-cols-3 gap-4 pb-6">
             <Card className="bg-red-500">
               <CardHeader>
-                <CardTitle className="text-lg">Impact Analysis & Reporting</CardTitle>
+                <CardTitle>Impact Analysis & Reporting</CardTitle>
               </CardHeader>
               <CardContent className="flex justify-center items-center">
                 <img
@@ -101,27 +102,27 @@ export function Component() {
             </Card>
             <Card className="bg-red-500">
               <CardHeader>
-                <CardTitle className="text-lg">Eco-friendly Habits</CardTitle>
+                <CardTitle>Eco-friendly Habits</CardTitle>
               </CardHeader>
               <CardContent className="flex justify-center items-center">
-                <img
+                <Image
                   alt="Eco-friendly Habits"
-                  height="100"
+                  height={100}
                   src="/placeholder.svg"
                   style={{
                     aspectRatio: "100/100",
                     objectFit: "cover",
                   }}
-                  width="100"
+                  width={100}
                 />
               </CardContent>
             </Card>
             <Card className="bg-red-500">
               <CardHeader>
-                <CardTitle className="text-lg">Sustainable Living</CardTitle>
+                <CardTitle>Sustainable Living</CardTitle>
               </CardHeader>
               <CardContent className="flex justify-center items-center">
-                <img
+                <Image
                   alt="Sustainable Living"
                   height="100"
                   src="/placeholder.svg"
@@ -135,10 +136,10 @@ export function Component() {
             </Card>
             <Card className="bg-red-500">
               <CardHeader>
-                <CardTitle className="text-lg">Community Impact</CardTitle>
+                <CardTitle>Community Impact</CardTitle>
               </CardHeader>
               <CardContent className="flex justify-center items-center">
-                <img
+                <Image
                   alt="Community Impact"
                   height="100"
                   src="/placeholder.svg"
@@ -152,10 +153,10 @@ export function Component() {
             </Card>
             <Card className="bg-red-500">
               <CardHeader>
-                <CardTitle className="text-lg">Global Impact</CardTitle>
+                <CardTitle>Global Impact</CardTitle>
               </CardHeader>
               <CardContent className="flex justify-center items-center">
-                <img
+                <Image
                   alt="Global Impact"
                   height="100"
                   src="/placeholder.svg"
@@ -172,7 +173,7 @@ export function Component() {
         <section>
           <h3 className="text-2xl font-semibold py-4">Resources</h3>
           <div className="grid grid-cols-3 gap-4">
-            <img
+            <Image
               alt="Resource 1"
               height="100"
               src="/placeholder.svg"
@@ -182,7 +183,7 @@ export function Component() {
               }}
               width="200"
             />
-            <img
+            <Image
               alt="Resource 2"
               height="100"
               src="/placeholder.svg"
@@ -192,7 +193,7 @@ export function Component() {
               }}
               width="200"
             />
-            <img
+            <Image
               alt="Resource 3"
               height="100"
               src="/placeholder.svg"
@@ -209,23 +210,23 @@ export function Component() {
   )
 }
 
-function ChevronDownIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m6 9 6 6 6-6" />
-    </svg>
-  )
+function ChevronDownIcon(props: React.SVGProps<SVGSVGElement>) {
+return (
+<svg
+{...props}
+xmlns="http://www.w3.org/2000/svg"
+width="24"
+height="24"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+strokeWidth="2"
+strokeLinecap="round"
+strokeLinejoin="round"
+>
+<path d="m6 9 6 6 6-6" />
+</svg>
+)
 }
 
 
@@ -250,28 +251,28 @@ function ClockIcon(props) {
 }
 
 
-function FishIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z" />
-      <path d="M18 12v.5" />
-      <path d="M16 17.93a9.77 9.77 0 0 1 0-11.86" />
-      <path d="M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33" />
-      <path d="M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4" />
-      <path d="m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98" />
-    </svg>
-  )
+function FishIcon(props: React.SVGProps<SVGSVGElement>) {
+return (
+<svg
+{...props}
+xmlns="http://www.w3.org/2000/svg"
+width="24"
+height="24"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+strokeWidth="2"
+strokeLinecap="round"
+strokeLinejoin="round"
+>
+<path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z" />
+<path d="M18 12v.5" />
+<path d="M16 17.93a9.77 9.77 0 0 1 0-11.86" />
+<path d="M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33" />
+<path d="M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4" />
+<path d="m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98" />
+</svg>
+)
 }
 
 
