@@ -16,7 +16,16 @@ const activities = [
 
 
 const Impact: React.FC = () => {
-  const [goal, setGoal] =useState(0)
+  const [activities, setActivities] = useState([
+    { name: '10 min shower', impacts: ['SDG 6'] },
+    { name: '1 hour walk', impacts: ['SDG 3', 'SDG 11'] },
+    { name: '1$ donation', impacts: ['SDG 1', 'SDG 2', 'SDG 3', 'SDG 4', 'SDG 5', 'SDG 6', 'SDG 7', 'SDG 8', 'SDG 9', 'SDG 10', 'SDG 11', 'SDG 12', 'SDG 13', 'SDG 14', 'SDG 15', 'SDG 16', 'SDG 17'] },
+    { name: 'Recycle', impacts: ['SDG 12'] },
+    { name: 'Turn off unused bulbs', impacts: ['SDG 7'] },
+    { name: 'Cycle', impacts: ['SDG 3', 'SDG 11'] },
+    { name: 'Plant trees', impacts: ['SDG 15'] },
+    // Add more activities as needed
+  ]);
   const [newActivityName, setNewActivityName] = useState('');
   const [newActivityImpacts, setNewActivityImpacts] = useState<string[]>([]);
   const [checkedActivities, setCheckedActivities] = useState<string[]>([]);
@@ -84,7 +93,7 @@ const Impact: React.FC = () => {
         <button type="submit">Add Activity</button>
       </form>
       {activities.map(activity => (
-       <div>Goal: {goal}</div>
+       <div>Goal: {activity.impacts.join(', ')}</div>
       ))}
     </div>
   );
